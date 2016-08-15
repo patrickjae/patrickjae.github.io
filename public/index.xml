@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML group, HU Berlin</title>
+    <link>http://amor.cms.hu-berlin.de/~jaehnicp/</link>
+    <description>Recent content on ML group, HU Berlin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Patrick Jähnichen</copyright>
+    <lastBuildDate>Wed, 29 Jun 2016 13:08:01 +0200</lastBuildDate>
+    <atom:link href="http://amor.cms.hu-berlin.de/~jaehnicp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Research poster templates</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/project/poster-templates/</link>
+      <pubDate>Wed, 29 Jun 2016 13:08:01 +0200</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/project/poster-templates/</guid>
+      <description>&lt;p&gt;For the upcoming poster presentations (and for general purposes), I have rebuilt some poster templates that I have found across the web. There is one Powerpoint template and three different latex templates (two based on the a0poster class and one based on the beamer class). All of the latex templates can be easily set to other formats (A0, A2, A3&amp;hellip;) and to landscape instead of portrait.
+Find the templates on &lt;a href=&#34;https://bitbucket.org/hotblack_desiato/poster-templates&#34;&gt;bitbucket&lt;/a&gt; and have fun ;-)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Spam Filter</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/project/spam-filter/</link>
+      <pubDate>Wed, 18 May 2016 11:36:46 +0200</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/project/spam-filter/</guid>
+      <description>&lt;p&gt;This year&#39;s course &lt;a href=&#34;https://www2.informatik.hu-berlin.de/~kloftmar/lectures/2016_ML1/&#34;&gt;Machine Learning 1&lt;/a&gt; included work on a specific project, including implementation, final report and presentation with a poster.
+While there were a variety of interesting project ideas (Kaggle challenges, SVM bootstrapping etc.), I had the pleasure to supervise three projects that were concerned with understanding the theory of a spam filter (i.e. a binary classification model) and implementing one based on different ways to realize such a classifier.
+The three models that were submitted are based on&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the support vector machine (SVM) [&lt;a href=&#34;svm_report.pdf&#34;&gt;paper&lt;/a&gt;, &lt;a href=&#34;svm_poster.pdf&#34;&gt;poster&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;a Bayesian analysis in conjunction with Fisher&#39;s combination method [&lt;a href=&#34;bayesian_report.pdf&#34;&gt;paper&lt;/a&gt; (&lt;em&gt;best paper award&lt;/em&gt;), &lt;a href=&#34;bayesian_poster.pdf&#34;&gt;poster&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;convolutional neural networks (CNN) [&lt;a href=&#34;cnn_report.pdf&#34;&gt;paper&lt;/a&gt;, &lt;a href=&#34;cnn_poster.pdf&#34;&gt;poster&lt;/a&gt; (&lt;em&gt;best presentation award&lt;/em&gt;)]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;some-general-thoughts&#34;&gt;Some general thoughts&lt;/h2&gt;
+
+&lt;p&gt;When working with natural language texts, one of the first decisions to make is on how to represent the texts in a useful way that can be utilized in machine learning. One way is to think of useful features and to extract these from the text based on a set of rules. This could include (given a spam detection context) e.g.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the length of the text,&lt;/li&gt;
+&lt;li&gt;the number of nouns,&lt;/li&gt;
+&lt;li&gt;the number of capitalized words,&lt;/li&gt;
+&lt;li&gt;the occurrence of terms that are present in some blacklist vocabulary,&lt;/li&gt;
+&lt;li&gt;the number of non alphanumeric characters.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Meta data that is associated with a given datum might also provide useful features. In our context this includes&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the sender,&lt;/li&gt;
+&lt;li&gt;the receiver,&lt;/li&gt;
+&lt;li&gt;copy receivers,&lt;/li&gt;
+&lt;li&gt;the subject,&lt;/li&gt;
+&lt;li&gt;the time stamp,&lt;/li&gt;
+&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The standard way to represent an unstructured text&#39;s content is the vector space model (VSM) of &lt;a href=&#34;vsm.pdf&#34;&gt;Salton and McGill, 1975&lt;/a&gt; in which documents are transformed into a high-dimensional vector $\mathbb N^{|W|}$ with $W$ the set of unique words (the vocabulary). I.e. the space is formed by the unique words in the corpus acting as unit vectors. A document is then a vector $\mathbf d = {d_1, d_2, \ldots, d_W}$ with $d_i$ the frequency of word $w_i$ in $\mathbf d$. As these vectors are usually very sparse, this representation is amenable to efficient storage as sparse vectors or, combining the documents, sparse matrices. Note that by aggregating the word frequencies in documents, we are effectively loosing the information on word position. The assumption is that the word frequency distributions of documents encode enough information to condone this information loss. A matrix combining the different documents is a matrix in $\mathbb N^{D\times |W|}$ and is called the &lt;em&gt;term-document matrix&lt;/em&gt;. This is the starting point for many different natural language analysis approaches.&lt;/p&gt;
+
+&lt;p&gt;Looking at count data, one would find that a high frequency of certain terms in a document might give hints on document similarity with other documents exhibiting a high frequency of the same terms. One problem that might arise is the high frequency of occurrence of certain terms in almost all documents (e.g. stopwords like &amp;quot;the&amp;quot;, &amp;quot;and&amp;quot; etc. or domain specific words such as &amp;quot;best&amp;quot; or &amp;quot;regards&amp;quot; in an email corpus). The way to handle this phenomenon is to reweight the entries in count vectors and matrices by the &lt;a href=&#34;https://en.wikipedia.org/wiki/Tf%E2%80%93idf&#34;&gt;&lt;em&gt;tf-idf measure&lt;/em&gt;&lt;/a&gt;.
+The tf-idf measure downweighs terms that are also highly frequent across other documents and thus decreases the problem. It is defined as &lt;span  class=&#34;math&#34;&gt;\(\text{tf-idf}_{d, w_i} = tf(d, w_i)\cdot idf(w_i, D)\)&lt;/span&gt; with &lt;span  class=&#34;math&#34;&gt;\(idf(w_i, D) = \log \frac{|D|}{|d\in D : w_i \in d|},\)&lt;/span&gt;i.e. the denominator is the number of documents in which term $w_i$ has frequency larger than zero.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-task&#34;&gt;The task&lt;/h2&gt;
+
+&lt;p&gt;I presented the groups with &lt;a href=&#34;https://spamassassin.apache.org/publiccorpus/&#34;&gt;Spamassassins training corpus&lt;/a&gt; consisting of 4.156 ham (i.e. normal, innocent) and 1.900 spam emails. Their task was it to parse the data, put it through a suitable preprocessing pipeline and thus extract useful information from it. After that, classifiers based on the techniques mentioned above were to be implemented. All teams additionally implemented some sort of model parameter optimization that tunes the algorithm to the data set. After submission, the approaches were then tested on a different data set (see evaluation below).&lt;/p&gt;
+
+&lt;h2 id=&#34;the-submissions&#34;&gt;The submissions&lt;/h2&gt;
+
+&lt;h3 id=&#34;svm-spam-filtering&#34;&gt;SVM spam filtering&lt;/h3&gt;
+
+&lt;p&gt;The submission based on the support vector machine extracted the following features&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;length of an email,&lt;/li&gt;
+&lt;li&gt;number of capital letters&lt;/li&gt;
+&lt;li&gt;number of non alphanumeric characters&lt;/li&gt;
+&lt;li&gt;number of digits&lt;/li&gt;
+&lt;li&gt;number of quotations and&lt;/li&gt;
+&lt;li&gt;number of line breaks in the email body.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Additionally, this group formed a VSM out of the email body after replacing certain terms of a blacklist vocabulary with marker strings and a lemmatization of the content. Both approaches represent some form of normalization, the blacklist vocabulary items are normalized to a unique marker string (effectively upweighing their impact) and terms are normalized to their baseform. In addition to the normalization benefit in terms of carving up their signals this results in a reduction of the vocabulary&#39;s dimensionality.
+For the final classification, the preprocessed body (i.e. blacklist vocabulary substituted and tf-idf weighted), the length of an email and its number of capital letters were used as features fed in to a linear support vector machines.
+The algorithm then performs a grid search for an optimal setting of the parameter describing the SVM&#39;s sensitivity to misclassification. Linear SVMs were used as substituting the linear kernel by a Gaussian one yielded no increase in accuracy but a huge decrease in performance. This insight corresponds nicely to finding of the CNN group.&lt;/p&gt;
+
+&lt;h3 id=&#34;bayesian-spam-filtering&#34;&gt;Bayesian spam filtering&lt;/h3&gt;
+
+&lt;p&gt;This group picked up Gary Robinson&#39;s idea of &lt;a href=&#34;http://www.linuxjournal.com/article/6467&#34;&gt;A Statistical Approach to the Spam Problem&lt;/a&gt; which is a relatively straight forward way of extending the Naive Bayes classifier that assumes independence between the words in a document.
+The main idea is to treat each word separately in the following manner: each email in which a term $w$ appears can be seen as a random draw from a binomial distribution whose outcome is either success (spam) or failure (ham) and which is governed by some unknown probability parameter $\theta$. We then proceed in a Bayesian way by putting a prior on $\theta$. The appropriate conjugate prior is the Beta distribution. Being conjugate means that this induces a Beta posterior distribution for $\theta$, i.e. &lt;span  class=&#34;math&#34;&gt;\( p(\theta|w) = p(C=spam|p, w)p(\theta|\alpha, \beta) = Beta(\alpha + s, \beta + h)\)&lt;/span&gt; with $s$ the number of spam mails and $h$ the number of ham mails containing word $w$ and $\alpha$ and $\beta$ are parameters to the prior distribution that can be seen as prior pseudo counts.
+As the parameter $\theta$ encodes the probability of success (i.e. of an email being spam), we can formulate the classification as &lt;span  class=&#34;math&#34;&gt;\(p(C=spam|w) = \mathbb E[\theta] = \mathbb E[Beta(\alpha + s, \beta + h)] = \frac{\alpha + s}{\alpha + \beta + n}\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;By this procedure, we arrive at a term-specific parameter $\theta$ indicating the &amp;quot;spamness&amp;quot; of a given term. To arrive at a classification result taking all words of an email into account, the submitted approach makes use of Fisher&#39;s method to combine dependent random variables, taking the dependence into account appropriately.&lt;/p&gt;
+
+&lt;p&gt;This approach does not transform emails into a VSM. Instead it combines both Bayesian and Frequentist methods by first computing term-specific posterior distrubutions and then combining those using a Frequentist method (Fisher&#39;s method).&lt;/p&gt;
+
+&lt;h3 id=&#34;convolutional-neural-network-spam-detection&#34;&gt;Convolutional neural network spam detection&lt;/h3&gt;
+
+&lt;p&gt;A spam filter based on convolutional neural networks (CNN)was presented by this group. They follow a slightly different approach and were operating on a character rather than on a word level. There input to the CNN is based on a 1-of-K coding of the first $n$ characters of an email, where $K = 70$ is is the size of the character vocabulary.
+They then feed this input into a neural network consisting of six convolutional layers, two fully connected layers and a read-out layer for the final classification.
+Each convolutional layer covers the whole character vocabulary and is applied to a varying window size of the input. Each fully connected layer is followed by a drop-out layer, dropping out 50% of the values to avoid overfitting. All network nodes (except those in the read-out layer) are assigned a thresholding function &lt;span  class=&#34;math&#34;&gt;\(h = \max\{0, x\},\)&lt;/span&gt;introducing non-linearity into the model. The read-out layer nodes react on the basis of softmax function to facilitate binary classification.&lt;/p&gt;
+
+&lt;h2 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h2&gt;
+
+&lt;p&gt;After some minor alterations to submitted code (mainly to read in emails recursively from a directory structure) and writing a wrapper around the dspam model (which thankfully provides a shared library to code against), I applied the different models to the &lt;a href=&#34;http://csmining.org/index.php/enron-spam-datasets.html&#34;&gt;Enron email spam corpus&lt;/a&gt;.
+This corpus consists of 33.027 ham and 20.339 spam emails of which I used 23.751 ham and 15.229 spam emails for training and the remaining 9.276 ham and 5.110 spam emails for final testing.
+Each of the methods was presented the training set and results were measured on their final performance on the test set. All of the models incorporated some kind of parameter optimization technique (mostly a gridsearch), except the CNN approach that had no further global model parameters that were altered (a possible extension could be to find the optimal value of $n$ or the optimal learning rate).
+While the groups use the training set provided to tune their parameters, it would have been formally correct to have the provided training data be separated into two different sets, the training and validation data set. Following this methodology, the training set is used for training the model using different model parameters, whose optimal values are then decided on the grounds of model performance on the validation set. Only finally, a third data set (the test set) is used to measure the final performance on unseen data.
+However, as said I provided a training set and measured performance on the test set as described above and measured performance in the below criteria. Note that a positive classification is handled as spam, a negative one as ham/innocent, i.e. $\text{tp}$ are true positives, spam emails that are correctly classified, $\text{fp}$ false positives, ham emails incorrectly classified as spam, $\text{tn}$ are true negatives, ham email correctly classified as ham and $\text{fn}$ are false negatives, spam emails incorrectly classified as ham.
+The performance criteria are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;precision, the ratio of true positives and all emails classified (correctly or incorrectly) as spam:
+&lt;span  class=&#34;math&#34;&gt;\(\text{prec} = \frac{\text{tp}}{\text{tp}+\text{fp}}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;recall, the ratio of true positives and all relevant elements (i.e. all spam emails):
+&lt;span  class=&#34;math&#34;&gt;\(\text{recall} = \frac{\text{tp}}{\text{tp}+\text{fn}}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;accuracy, the ratio of correctly classified emails and all emails:
+&lt;span  class=&#34;math&#34;&gt;\(\text{accuracy} = \frac{\text{tp} + \text{tn}}{N}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;and the &lt;span  class=&#34;math&#34;&gt;\(F_{.5}\)&lt;/span&gt; measure, a harmonic mean of precision and recall, weighting precision higher:
+&lt;span  class=&#34;math&#34;&gt;\(F_{.5} = 1.25\cdot\frac{\text{prec}\cdot \text{recall}}{0.25\cdot \text{prec} + \text{recall}}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The last measure &lt;span  class=&#34;math&#34;&gt;\(F_{.5}\)&lt;/span&gt; is an instance of the $F(\beta)$ measure defined as $F(\beta) = (1+\beta^2)\frac{prec\cdot rec}{\beta^2\cdot prec + rec}$. If $\beta=1$ this corresponds to the harmonic mean of precision and recall. However, if $\beta &amp;gt; 1$ more emphasis is laid on recall and if $\beta&amp;lt;1$ more on precision. As we see it more important to avoid classifications of ham as spam than to find all spam emails, we apply the &lt;span  class=&#34;math&#34;&gt;\(F_{.5}\)&lt;/span&gt; measure here, putting higher weight on the precision, i.e. we lay higher emphasis on a higher rate of true spam emails in those classified as spam.
+Additionally, to compare the models in terms of their binary classification performance, we also report the receiver operating characteristics (ROC) of the classifiers. This is graphical plot if the true positive rate TPR (a.k.a. recall) against the false positive rate (a.k.a. fall-out) which is the ratio of emails incorrectly classified as spam and all ham emails, i.e. &lt;span  class=&#34;math&#34;&gt;\(\text{fall-out} = \frac{fp}{fp+tn}.\)&lt;/span&gt;
+The perfect binary classifier has $TPR=1$ and $FPR=0$.&lt;/p&gt;
+
+&lt;p&gt;The final results are shown in Table 1, a graphical comparison of these and the ROCs are given in Figure 1 and Figure 2 respectively.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;caption&gt;
+Table 1: Comparison of approaches
+
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Model&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;precision&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;recall&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;accuracy&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;span  class=&#34;math&#34;&gt;\(F_{.5}\)&lt;/span&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;dpsam&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$\textbf{1.0}$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.987$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.995$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.997$&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;CNN&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.999$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$\textbf{1.0}$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$\textbf{0.999}$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$\textbf{0.999}$&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;Bayes&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.951$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.999$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.981$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.960$&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;SVM&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.977$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.888$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.953$&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;p&gt;$0.958$&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;/p&gt;
+&lt;figure role=&#34;group&#34; id=&#34;comparison&#34; width=&#34;30%&#34;&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;figure role=&#34;group&#34;&gt;&lt;img src=&#34;comparison.png&#34; alt=&#34;Measures&#34;&gt;&lt;/figure&gt;&lt;/dt&gt;
+&lt;dd&gt;Figure 1: Measure comparison&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;/center&gt;
+&lt;center&gt;&lt;/p&gt;
+&lt;figure role=&#34;group&#34; id=&#34;roc&#34; width=&#34;30%&#34;&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;figure role=&#34;group&#34;&gt;&lt;img src=&#34;roc.png&#34; alt=&#34;ROC&#34;&gt;&lt;/figure&gt;&lt;/dt&gt;
+&lt;dd&gt;Figure 2: ROC&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;While all models reached reasonable performance, the CNN approach stands out in terms of performance, outperforming not only the other submitted approaches but even the open-source spam filter &lt;em&gt;dspam&lt;/em&gt;. The Bayesian spam filter approaches the performance of &lt;em&gt;dspam&lt;/em&gt; exhibiting a slightly higher TPR but also higher FPR. SVMs could compete in terms of FPR but not in TPR.
+These results are of only qualitative nature, algorithm performance was neither a requirement nor was this analysis based on it. However, would we take this into account, the submitted approaches are clearly outperformed by &lt;em&gt;dspam&lt;/em&gt; in terms of runtime/&lt;span  class=&#34;math&#34;&gt;\(F_{.5}\)&lt;/span&gt; trade-off. Training &lt;em&gt;dspam&lt;/em&gt; on the roughly 40.000 emails in the training set took slightly over two minutes. In contrast, the model with least training time was the SVM taking around 40 minutes for the same task. Following were CNNs and the Bayesian approach that took unacceptable three hours to train. Anyhow, predictions were much faster after the training phase was completed (as would be expected).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Algorithms and Datastructures</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/teaching/summer_2016/algorithms-and-datastructures-spring-2016/</link>
+      <pubDate>Tue, 17 May 2016 16:51:03 +0200</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/teaching/summer_2016/algorithms-and-datastructures-spring-2016/</guid>
+      <description>&lt;p&gt;I will serve as substitute lecturer for Algorithms and Datastructures on a few occasions. Check out the external course page for more info.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning 1</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/teaching/summer_2016/machine-learning-1-spring-2016/</link>
+      <pubDate>Tue, 17 May 2016 11:17:22 +0200</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/teaching/summer_2016/machine-learning-1-spring-2016/</guid>
+      <description>&lt;p&gt;I am supervising student projects in the ML 1 exercise, in particular those teams that work on an e-mail spam filter using different ML techniques (see the &lt;a href=&#34;../../../project/spam-filter&#34;&gt;project page&lt;/a&gt;). Additionally, I will act as substitute lecturer on one or two dates.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Math Example</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/post/math-example/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/post/math-example/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;p&gt;An example mathematical expression rendered from $\rm \LaTeX$ math code:
+$$\left [ – \frac{\hbar^2}{2 m} \frac{\partial^2}{\partial x^2} + V \right ] \Psi = i \hbar \frac{\partial}{\partial t} \Psi$$&lt;/p&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Programming Example</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/post/example-post/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/post/example-post/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Lorem ipsum&lt;/strong&gt; dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Example of code highlighting
+input_string_var = input(&amp;quot;Enter some data: &amp;quot;)
+print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/home/about/</guid>
+      <description>
+
+&lt;h2 id=&#34;biography:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Biography&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;m a postdoctoral researcher in the machine learning group headed by &lt;a href=&#34;https://www2.informatik.hu-berlin.de/~kloftmar/&#34;&gt;Marius Kloft&lt;/a&gt; at Humboldt-University of Berlin. My main research interests include machine learning algorithms for text mining (in particular topic modeling), scalable variational inference algorithms, Gaussian processes and I recently started to look into deep neural networks.
+I received a PhD in natural language processing/machine learning from Leipzig University where my supervisor was &lt;a href=&#34;http://asv.informatik.uni-leipzig.de/en/staff/Gerhard_Heyer&#34;&gt;Gerhard Heyer&lt;/a&gt;. Before that, I completed a Master&amp;rsquo;s program at Leipzig University and a Bachelor&amp;rsquo;s program at the University of Cooperative Education in Stuttgart including one term abroad at Staffordshire University&amp;rsquo;s School of Computing. During my time in Stuttgart, I was also simultaneously employed by IBM Germany where I had the chance to visit IBM&amp;rsquo;s Almaden research lab in San Jose, California.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time dynamic topic models</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2016/phd-thesis/</link>
+      <pubDate>Wed, 23 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2016/phd-thesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mining big data with computational methods</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2016/mining-big-data/</link>
+      <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2016/mining-big-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploratory Search Through Interactive Visualization of Topic Models</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/exploratory-search/</link>
+      <pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/exploratory-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Topological visual analysis of clusterings in high-dimensional information spaces</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/topological-va/</link>
+      <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/topological-va/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploring issues in a networked public sphere Combining hyperlink network analysis and topic modeling</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/issues-public-sphere/</link>
+      <pubDate>Sun, 11 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/issues-public-sphere/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASV Monitor: Creating Comparability of Machine Learning Methods for Content Analysis</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2012/asv-monitor/</link>
+      <pubDate>Fri, 28 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2012/asv-monitor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matching Results of Latent Dirichlet Allocation for Text</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2012/lda-result-matching/</link>
+      <pubDate>Sun, 15 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2012/lda-result-matching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Predicting Social Networks in Weblogs</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2011/predicting-social-networks/</link>
+      <pubDate>Fri, 17 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2011/predicting-social-networks/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

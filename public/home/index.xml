@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on ML group, HU Berlin</title>
+    <link>http://amor.cms.hu-berlin.de/~jaehnicp/home/</link>
+    <description>Recent content in Homes on ML group, HU Berlin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Patrick Jähnichen</copyright>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://amor.cms.hu-berlin.de/~jaehnicp/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>about</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/home/about/</guid>
+      <description>
+
+&lt;h2 id=&#34;biography:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Biography&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;m a postdoctoral researcher in the machine learning group headed by &lt;a href=&#34;https://www2.informatik.hu-berlin.de/~kloftmar/&#34;&gt;Marius Kloft&lt;/a&gt; at Humboldt-University of Berlin. My main research interests include machine learning algorithms for text mining (in particular topic modeling), scalable variational inference algorithms, Gaussian processes and I recently started to look into deep neural networks.
+I received a PhD in natural language processing/machine learning from Leipzig University where my supervisor was &lt;a href=&#34;http://asv.informatik.uni-leipzig.de/en/staff/Gerhard_Heyer&#34;&gt;Gerhard Heyer&lt;/a&gt;. Before that, I completed a Master&amp;rsquo;s program at Leipzig University and a Bachelor&amp;rsquo;s program at the University of Cooperative Education in Stuttgart including one term abroad at Staffordshire University&amp;rsquo;s School of Computing. During my time in Stuttgart, I was also simultaneously employed by IBM Germany where I had the chance to visit IBM&amp;rsquo;s Almaden research lab in San Jose, California.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

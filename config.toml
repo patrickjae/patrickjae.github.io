@@ -1,0 +1,120 @@
+baseurl = "http://amor.cms.hu-berlin.de/~jaehnicp/"
+title = "ML group, HU Berlin"
+copyright = "&copy; 2016 Patrick Jähnichen"
+languageCode = "en-us"
+theme = "academic"
+
+# Enable comments by entering your Disqus shortname
+disqusShortname = "spf13"
+
+# Enable analytics by entering your Google Analytics tracking ID
+# googleAnalytics = "UA-80913130-1"
+
+
+[params]
+    name = "Patrick Jähnichen"
+    role = "Postdoctoral Researcher in Machine Learning"
+    organization = "Humboldt-Universität zu Berlin"
+    interests = ["Topic modeling", "Dynamic Bayesian Models", "Gaussian processes", "Scalable Baysian Inference"]
+    email = "patrick.jaehnichen@hu-berlin.de"
+    address = "Machine Learning Group, Humboldt-Universität zu Berlin, Unter den Linden 6, 10099 Berlin."
+    phone = "+49 (0)30 2093 3167"
+
+    # Date format (refer to Go's formatting options)
+    #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
+    date_format = "Mon, Jan 2, 2006"
+
+    # Enable global LaTeX math rendering? If false, you can enable it locally on a per page basis.
+    math = true
+
+    # Link custom CSS and JS assets (relative to /static/css and /static/js respectively)
+    custom_css = []
+    custom_js  = []
+
+    #set current term
+    current_term = "Summer 2016"
+
+    [[params.education]]
+        course = "PhD in NLP/ML"
+        institution = "Leipzig University"
+        year = 2016
+
+    [[params.education]]
+        course = "MSc in NLP/ML"
+        institution = "Leipzig University"
+        year = 2010
+
+    [[params.education]]
+        course = "BSc in Applied Computer Science"
+        institution = "Stuttgart University of Cooperative Education (BA)"
+        year = 2005
+
+    # Social/Academic Networking
+    #
+    # Icon pack "fa" includes the following social network icons:
+    #   twitter, weibo, linkedin, github, facebook, pinterest, google-plus, youtube, instagram, soundcloud
+    #   For email icon, use "fa" icon pack, "envelope" icon, and "mailto:your@email.com" as the link.
+    #   Full list: https://fortawesome.github.io/Font-Awesome/icons/
+    #
+    # Icon pack "ai" includes the following academic network icons:
+    #   google-scholar, arxiv, orcid, researchgate, mendeley
+    #   Full list: https://jpswalsh.github.io/academicons/
+
+    [[params.social]]
+        icon = "envelope"
+        icon_pack = "fa"
+        link = "mailto:patrick.jaehnichen@hu-berlin.de"
+
+#    [[params.social]]
+#        icon = "twitter"
+#        icon_pack = "fa"
+#        link = "//twitter.com/GeorgeCushen"
+
+    [[params.social]]
+        icon = "researchgate"
+        icon_pack = "ai"
+        link = "https://www.researchgate.net/profile/Patrick_Jaehnichen"
+
+    [[params.social]]
+        icon = "github"
+        icon_pack = "fa"
+        link = "//github.com/hotblack-desiato"
+
+    [[params.social]]
+        icon = "bitbucket"
+        icon_pack = "fa"
+        link = "https://bitbucket.org/hotblack_desiato/"
+
+# Navigation Links
+#
+# The weight parameter defines the order that the links will appear in.
+
+[[menu.main]]
+    name = "Home"
+    url = "#top"
+    weight = 1
+
+[[menu.main]]
+    name = "Publications"
+    url = "#publications"
+    weight = 2
+
+# [[menu.main]]
+#     name = "Posts"
+#     url = "#posts"
+#     weight = 3
+
+[[menu.main]]
+    name = "Projects and Materials"
+    url = "#projects"
+    weight = 4
+
+[[menu.main]]
+    name = "Teaching"
+    url = "#teaching"
+    weight = 5
+
+[[menu.main]]
+    name = "Contact"
+    url = "#contact"
+    weight = 6

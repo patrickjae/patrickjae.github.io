@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on ML group, HU Berlin</title>
+    <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/</link>
+    <description>Recent content in Publications on ML group, HU Berlin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Patrick Jähnichen</copyright>
+    <lastBuildDate>Wed, 23 Mar 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://amor.cms.hu-berlin.de/~jaehnicp/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Time dynamic topic models</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2016/phd-thesis/</link>
+      <pubDate>Wed, 23 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2016/phd-thesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mining big data with computational methods</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2016/mining-big-data/</link>
+      <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2016/mining-big-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploratory Search Through Interactive Visualization of Topic Models</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/exploratory-search/</link>
+      <pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/exploratory-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Topological visual analysis of clusterings in high-dimensional information spaces</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/topological-va/</link>
+      <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/topological-va/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploring issues in a networked public sphere Combining hyperlink network analysis and topic modeling</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/issues-public-sphere/</link>
+      <pubDate>Sun, 11 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2015/issues-public-sphere/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASV Monitor: Creating Comparability of Machine Learning Methods for Content Analysis</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2012/asv-monitor/</link>
+      <pubDate>Fri, 28 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2012/asv-monitor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matching Results of Latent Dirichlet Allocation for Text</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2012/lda-result-matching/</link>
+      <pubDate>Sun, 15 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2012/lda-result-matching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Predicting Social Networks in Weblogs</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2011/predicting-social-networks/</link>
+      <pubDate>Fri, 17 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2011/predicting-social-networks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Praxis of Social Knowledge Federation</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2010/praxis-soc-know-fed/</link>
+      <pubDate>Sat, 25 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2010/praxis-soc-know-fed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Finding and Analyzing Social Networks in unstructured web log data using probabilistic topic modeling</title>
+      <link>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2009/finding-analyzing/</link>
+      <pubDate>Mon, 01 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://amor.cms.hu-berlin.de/~jaehnicp/publication/2009/finding-analyzing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
