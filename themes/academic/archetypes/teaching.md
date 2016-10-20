@@ -1,6 +1,6 @@
 +++
 term = ""
-role = ""
+role = [""]
 tags = [""]
 title = ""
 external_link = ""

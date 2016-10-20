@@ -1,16 +1,35 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Taught courses</h2>
+            {{ $paginator := .Paginate .Data.Pages }}
+            {{ $cur_term := .Site.Params.current_term }}
+            {{ range .Data.Pages.GroupByParam "term" }}
+                {{ if not ( eq .Key $cur_term ) }}
+                    <div class="row" id="teachings_list">
+                        <div class="col-md-2">
+                            <h4>{{ .Key }}</h4>
+                        </div>
+                        <div class="col-md-10">
+                            <ul class="compact fa-ul">
+                                {{ range .Pages }}
+                                    <li>
+                                        <i class="fa-li fa fa-graduation-cap"  aria-hidden="true" style="color:#03396c;font-size:80%;padding-top:6px;"></i>
+                                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                    </li>
+                                {{ end }}
 
-    {{ $paginator := .Paginate .Data.Pages }}
-    {{ range $paginator.Pages }}
-        {{ if not ( eq .Params.term .Site.Params.current_term ) }}
-        <div>
-            <h3><a href="{{ .Permalink }}">{{ .Title }}-{{.Params.term}}</a></h3>
-            <p>{{ .Summary }}</p>
+                            </ul>
+                        </div>
+                    </div>
+                {{ end }}
+            {{ end }}
+
         </div>
-        {{ end }}
-    {{ end }}
+    </div>
+
 
     {{ partial "pagination" . }}
 

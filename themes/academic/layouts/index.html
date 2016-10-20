@@ -107,16 +107,23 @@
 
 <!-- Teachings Section -->
 {{ $teachings := where .Data.Pages "Type" "teaching" }}
-{{ $prev_teachings := where $teachings .Params.term "!=" .Site.Params.current_term }}
-{{ if gt (len $teachings) 0 }}
+{{ $curTerm := .Site.Params.current_term }}
+{{ range $teachings }}
+    {{ if eq .Params.term .Site.Params.current_term }}
+        {{ $.Scratch.Add "currentCourses" 1 }}
+    {{ else }}
+        {{ $.Scratch.Add "prevCourses" 1 }}
+    {{ end }}
+{{ end }}
+{{ if gt ($.Scratch.Get "currentCourses") 0 }}
 <section id="teaching" class="home-section">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-4">
                 <h2>Current courses</h2>
-<!--                {{ if gt (len $prev_teachings) 0 }}
-                        <p><a href="{{ .Site.BaseURL }}teaching/">Previous terms ({{len $prev_teachings}} courses) <i class="fa fa-angle-double-right" style="padding-left: 5px;"></i></a></p>
-                {{ end }} -->
+                {{ if gt ($.Scratch.Get "prevCourses") 0 }}
+                        <p><a href="{{ .Site.BaseURL }}teaching/">Previous terms ({{$.Scratch.Get "prevCourses"}} courses) <i class="fa fa-angle-double-right" style="padding-left: 5px;"></i></a></p>
+                {{ end }}
 
             </div>
             <div class="col-xs-12 col-md-8">

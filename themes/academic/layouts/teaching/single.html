@@ -4,7 +4,11 @@
 
     <article class="article article-project" itemscope itemtype="http://schema.org/Article">
         <h1 itemprop="name">{{ .Title }}</h1>
-        {{ with .Params.role }} <span class="btn btn-info" style="cursor: default">{{ . }}</span>{{ end }}
+        {{ with .Params.role }} 
+            {{ range .}}
+                <span class="btn btn-info" style="cursor: default">{{ . }}</span>
+            {{ end }}
+        {{ end }}
         {{ with .Params.external_link }}<a class="btn btn-primary btn-outline" href="{{ . }}">Go to Course Site</a>{{ end }}
 
         <div class="post" itemprop="articleBody">

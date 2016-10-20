@@ -1,6 +1,7 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 <div class="container">
+
     {{ $paginator := .Paginate .Data.Pages }}
     {{ range $paginator.Pages }}
 	    {{ if not ( eq .Params.term .Site.Params.current_term ) }}
