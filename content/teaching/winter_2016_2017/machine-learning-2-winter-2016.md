@@ -1,10 +1,10 @@
 +++
 date = "2016-10-14T17:11:40+02:00"
-external_link = ""
-role = ""
+external_link = "https://www2.informatik.hu-berlin.de/~kloftmar/lectures/2016_ML2/2016_ML2.html"
+role = ["Lecturer", "Teaching Assistant"]
 summary = ""
 tags = [""]
-term = "winter_2016_2017"
+term = "Winter 2016/2017"
 title = "Machine Learning 2"
 
 +++

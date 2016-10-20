@@ -2,7 +2,7 @@
 date = "2016-05-17T11:17:22+02:00"
 math = false
 term = "Summer 2016"
-role = "Teaching Assistant"
+role = ["Teaching Assistant"]
 tags = ["course", "programming"]
 title = "Machine Learning 1"
 

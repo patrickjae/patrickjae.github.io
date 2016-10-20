@@ -1,10 +1,10 @@
 +++
 date = "2016-10-14T17:11:57+02:00"
 external_link = "https://moodle.hu-berlin.de/course/view.php?id=73119"
-role = ""
+role = ["Lecturer"]
 summary = ""
 tags = [""]
-term = "winter_2016_2017"
+term = "Winter 2016/2017"
 title = "Data Modeling"
 
 +++
