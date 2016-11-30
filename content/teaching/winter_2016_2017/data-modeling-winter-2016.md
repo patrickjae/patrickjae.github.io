@@ -46,7 +46,6 @@ You'll have *two* options for the final report:
 5. [Statistical inference - sampling](papers/sampling.pdf)
 6. [Statistical inference - variational inference](papers/vi.pdf)
 8. [Stochastic variational inference](papers/svi.pdf)
-8. [Bayesian linear and logistic regression](papers/bayesian_regression.pdf)
 9. [Hidden Markov models](papers/hmm.pdf)
-4. [Topic admixture models and applications](papers/topicmodels.pdf)
+4. [Topic models and applications](papers/topicmodels.pdf)
 7. [Probabilistic nonnegative matrix factorization](probNMF.pdf)
