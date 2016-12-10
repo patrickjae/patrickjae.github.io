@@ -8,7 +8,7 @@ theme = "academic"
 disqusShortname = "patrickjhnichen"
 
 # Enable analytics by entering your Google Analytics tracking ID
-# googleAnalytics = "UA-80913130-1"
+googleAnalytics = "UA-80913130-1"
 
 
 [params]
