@@ -1,23 +1,23 @@
 baseurl = "https://amor.cms.hu-berlin.de/~jaehnicp/"
 title = "ML group, HU Berlin"
-copyright = "&copy; 2016 Patrick J√§hnichen"
+copyright = "&copy; 2016 Patrick J‰hnichen"
 languageCode = "en-us"
 theme = "academic"
 
 # Enable comments by entering your Disqus shortname
-disqusShortname = "spf13"
+disqusShortname = "patrickjhnichen"
 
 # Enable analytics by entering your Google Analytics tracking ID
 # googleAnalytics = "UA-80913130-1"
 
 
 [params]
-    name = "Patrick J√§hnichen"
+    name = "Patrick J‰hnichen"
     role = "Postdoctoral Researcher in Machine Learning"
-    organization = "Humboldt-Universit√§t zu Berlin"
+    organization = "Humboldt-Universit‰t zu Berlin"
     interests = ["Topic modeling", "Dynamic Bayesian Models", "Gaussian processes", "Scalable Baysian Inference"]
     email = "patrick.jaehnichen@hu-berlin.de"
-    address = "Machine Learning Group, Humboldt-Universit√§t zu Berlin, Unter den Linden 6, 10099 Berlin."
+    address = "Machine Learning Group, Humboldt-Universit‰t zu Berlin, Unter den Linden 6, 10099 Berlin."
     phone = "+49 (0)30 2093 3167"
 
     # Date format (refer to Go's formatting options)
