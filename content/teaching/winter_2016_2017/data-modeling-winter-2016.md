@@ -41,11 +41,11 @@ You'll have *two* options for the final report:
 ## List of topics / Syllabus
 1. [Introduction to graphical models](papers/graphical_models.pdf)
 2. [Latent variable models and mixture models](papers/latent_variable_models.pdf)
-1. Bayesian Statistics: model selection, priors, conjugacy (chapter 5 of Murphy: Machine Learning: A probabilistic perspective, see [Moodle](https://moodle.hu-berlin.de/course/view.php?id=73119))
+1. Bayesian Statistics: model selection, priors, conjugacy (chapter 5 of Murphy: Machine Learning: A probabilistic perspective
 3. [The Expectation-Maximization algorithm](papers/EM.pdf)
 5. [Statistical inference - sampling](papers/sampling.pdf)
 6. [Statistical inference - variational inference](papers/vi.pdf)
 8. [Stochastic variational inference](papers/svi.pdf)
-9. [Hidden Markov models](papers/hmm.pdf)
+9. [Hidden Markov models](chapter 13 of Bishop: Pattern Recognition and Machine Learning)
 4. [Topic models and applications](papers/topicmodels.pdf)
 7. [Probabilistic nonnegative matrix factorization](probNMF.pdf)

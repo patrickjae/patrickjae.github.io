@@ -1,6 +1,6 @@
 baseurl = "https://amor.cms.hu-berlin.de/~jaehnicp/"
 title = "ML group, HU Berlin"
-copyright = "&copy; 2016 Patrick Jähnichen"
+copyright = "&copy; 2016 Patrick JÃ¤hnichen"
 languageCode = "en-us"
 theme = "academic"
 
@@ -8,16 +8,16 @@ theme = "academic"
 disqusShortname = "patrickjhnichen"
 
 # Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = "UA-80913130-1"
+# googleAnalytics = "UA-80913130-1"
 
 
 [params]
-    name = "Patrick Jähnichen"
+    name = "Patrick JÃ¤hnichen"
     role = "Postdoctoral Researcher in Machine Learning"
-    organization = "Humboldt-Universität zu Berlin"
+    organization = "Humboldt-Universit? zu Berlin"
     interests = ["Topic modeling", "Dynamic Bayesian Models", "Gaussian processes", "Scalable Baysian Inference"]
     email = "patrick.jaehnichen@hu-berlin.de"
-    address = "Machine Learning Group, Humboldt-Universität zu Berlin, Unter den Linden 6, 10099 Berlin."
+    address = "Machine Learning Group, Humboldt-Universit? zu Berlin, Unter den Linden 6, 10099 Berlin."
     phone = "+49 (0)30 2093 3167"
 
     # Date format (refer to Go's formatting options)
@@ -32,7 +32,7 @@ googleAnalytics = "UA-80913130-1"
     custom_js  = []
 
     #set current term
-    current_term = "Summer 2016"
+    current_term = "Winter 2016/2017"
 
     [[params.education]]
         course = "PhD in NLP/ML"

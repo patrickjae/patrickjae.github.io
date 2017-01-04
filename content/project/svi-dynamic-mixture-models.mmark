@@ -1,0 +1,23 @@
++++
+client_name = ""
+date = "2016-12-11T16:18:21+01:00"
+external_link = ""
+img = ""
+img_preview = ""
+summary = ""
+tags = []
+title = "Scalable Inference in Dynamic Mixture Models"
+draft = "true"
++++
+
+We describe a technique to efficiently do approximate Bayesian inference in dynamic mixture models for massive data sets.
+We presented this work at the [Advances in Appriximate Bayesian Inference workshop](http://approximateinference.org) at NIPS 2016 in Barcelona. One motivation to work with this kind of model is its potential application in the context of models of mixed membership. In fact, the dynamic topic model defines an enclosed class of dynamic priors over which we generalize in the following. It is this model from which we draw our motivation.
+
+## Setting
+Consider a simple Gaussian mixture model (GMM) as depicted in plate notation in Fig. 1. It follows the usual generative process and for simplicity we assume a fully conjugate model setting.
+In dynamic mixture models (the mentioned dynamic topic model is an instance of the more complex class of dynamic models of mixed membership), we try to incorporate additional data into our modeling assumptions. In our particular case the additional data is a timestamp that is associated with each data point and we model the model's mixture components to be dynamic, i.e. underlying some transition or diffusion.
+Typically, the dynamics are modeled as a Markov chain as follows. Let $K$ be the number of mixture components and $T$ the total number of timestamps we observe in the overall data set. We define a dynamic prior over mixture components $\beta_{k}$ such that the component $k$ at time $t$ depends only on the same component $k$ at time $t-1$ and the difference in time. Formally, 
+
+$$\beta_{k,t}|\beta_{k,t-1} \sim \mathcal N(\beta_{k,t-1}, \hat\nu_{t}\Delta_{t,t-1}\mathbb I) \qquad \forall k \in \{1,\ldots,K\},$$
+
+ where $\Delta_{t,t-1}$ is the difference in time between the two timestamps, $\nu_{t}$ is a variance parameter influencing the strength of the diffusion and $\mathbb I$ is the identity matrix. Each $\beta_{k,t}$ is a $D$-dimensional random variable where $D$ denotes the dimensionality of the data. 
