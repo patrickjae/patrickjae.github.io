@@ -48,4 +48,4 @@ You'll have *two* options for the final report:
 8. [Stochastic variational inference](papers/svi.pdf)
 9. [Hidden Markov models](chapter 13 of Bishop: Pattern Recognition and Machine Learning)
 4. [Topic models and applications](papers/topicmodels.pdf)
-7. [Probabilistic nonnegative matrix factorization](probNMF.pdf)
+7. [Probabilistic nonnegative matrix factorization](papers/probabilistic_nmf.pdf)
