@@ -11,7 +11,7 @@ draft = "true"
 +++
 
 We describe a technique to efficiently do approximate Bayesian inference in dynamic mixture models for massive data sets.
-We presented this work at the [Advances in Appriximate Bayesian Inference workshop](http://approximateinference.org) at NIPS 2016 in Barcelona. One motivation to work with this kind of model is its potential application in the context of models of mixed membership. In fact, the dynamic topic model defines an enclosed class of dynamic priors over which we generalize in the following. It is this model from which we draw our motivation.
+We presented this work at the [Advances in Approximate Bayesian Inference workshop](http://approximateinference.org) at NIPS 2016 in Barcelona. One motivation to work with this kind of model is its potential application in the context of models of mixed membership. In fact, the dynamic topic model defines an enclosed class of dynamic priors over which we generalize in the following. It is this model from which we draw our motivation.
 
 ## Setting
 Consider a simple Gaussian mixture model (GMM) as depicted in plate notation in Fig. 1. It follows the usual generative process and for simplicity we assume a fully conjugate model setting.

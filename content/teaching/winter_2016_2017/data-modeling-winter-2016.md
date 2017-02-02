@@ -10,7 +10,7 @@ title = "Data Modeling"
 +++
 ## Contents
 
-This seminar will include an introduction to the wide field of Bayesian modeling. We will cover the basics of probabilistic machine learning and then read and discuss different models and techniques for modeling observed data in a Bayesian model. This will naturally include Bayesian mixture models and admixture models. Additional topics include
+This seminar will include an introduction to the wide field of Bayesian modeling. We will cover the basics of probabilistic machine learning and then read and discuss different models and techniques for modeling observed data in a Bayesian model. This will naturally include Bayesian mixture models and models of mixed membership. Additional topics include
 
 - latent variable models
 - the EM algorithm
@@ -35,8 +35,16 @@ The seminar consists of perpetual attendance and active participation in the dis
 Additionally, each of the students is required to read each paper and prepare a _short_ summary in .5-1 page max. This summary needs to be handed in one day prior to the date at which the paper is presented.
 You'll have *two* options for the final report:
 
-1. Write about the paper you presented and put it in a broader scientific context. Your rule of thump is, that anyone with a basic technical understanding _but without_ knowledge about the topic should gain an overview, what it is about, why and when to use it as well as when _not_ to use it.
-2. Find a dataset that interests you and write about a probabilistic model that can be used to analyze the data in a sense you deem beneficial. Make use of the models and techniques that we cover in the seminar.
+1. Write about the paper you presented and put it in a broader scientific context. A rule of thump is, that anyone with a basic technical understanding _but without_ knowledge about the topic should gain an overview, what it is about, why and when to use it as well as when _not_ to use it. A second possibility here is to look deeper into the derivations presented in the paper and to reproduce the steps necessary to arrive at the solutions. This could include e.g. the formal derivation of full conditionals, expectations etc. in the application papers or deriving the natural gradients using the properties of the exponential family in SVI. 
+
+2. Find a dataset that interests you and write about a probabilistic model that can be used to analyze the data in a sense you deem beneficial. Make use of the models and techniques that we cover in the seminar. It is not forbidden to do experiments on the data nor to implement a certain model, although formally this is no requirement (remember, it's a seminar). But doing so will not result in downgrading ;-)
+
+I've created a [template](report_template.zip) to use for your report. Although it is not mandatory, I strongly advise you to use Latex. Use [this cheatsheet](https://wch.github.io/latexsheet/latexsheet-a4.pdf) for basic Latex commands or [this Wikepedia help page](https://en.wikipedia.org/wiki/Help:Displaying_a_formula) for a list of possible symbols, operators, alphabets and typefaces.
+
+[Pew Research](http://www.pewresearch.org/data/download-datasets/), [ICPSR](https://www.icpsr.umich.edu/index.html) and [SAGE](http://methods.sagepub.com/datasets) are good starting points to look for data, although there are plenty more.
+
+The final report should not be longer than **8 pages**.
+
 
 ## List of topics / Syllabus
 1. [Introduction to graphical models](papers/graphical_models.pdf)
@@ -46,6 +54,6 @@ You'll have *two* options for the final report:
 5. [Statistical inference - sampling](papers/sampling.pdf)
 6. [Statistical inference - variational inference](papers/vi.pdf)
 8. [Stochastic variational inference](papers/svi.pdf)
-9. [Hidden Markov models](chapter 13 of Bishop: Pattern Recognition and Machine Learning)
+9. Hidden Markov models (chapter 13 of Bishop: Pattern Recognition and Machine Learning)
 4. [Topic models and applications](papers/topicmodels.pdf)
 7. [Probabilistic nonnegative matrix factorization](papers/probabilistic_nmf.pdf)
