@@ -14,10 +14,10 @@ disqusShortname = "patrickjhnichen"
 [params]
     name = "Patrick Jähnichen"
     role = "Postdoctoral Researcher in Machine Learning"
-    organization = "Humboldt-Universit? zu Berlin"
+    organization = "Humboldt-Universität zu Berlin"
     interests = ["Topic modeling", "Dynamic Bayesian Models", "Gaussian processes", "Scalable Baysian Inference"]
     email = "patrick.jaehnichen@hu-berlin.de"
-    address = "Machine Learning Group, Humboldt-Universit? zu Berlin, Unter den Linden 6, 10099 Berlin."
+    address = "Machine Learning Group, Humboldt-Universität zu Berlin, Unter den Linden 6, 10099 Berlin."
     phone = "+49 (0)30 2093 3167"
 
     # Date format (refer to Go's formatting options)
