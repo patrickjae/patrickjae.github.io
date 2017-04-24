@@ -17,6 +17,7 @@ disqusShortname = "patrickjhnichen"
     organization = "Humboldt-Universität zu Berlin"
     interests = ["Topic modeling", "Dynamic Bayesian Models", "Gaussian processes", "Scalable Baysian Inference"]
     email = "patrick.jaehnichen@hu-berlin.de"
+    office_hours = "Office hours: Thursdays, 1 pm - 3 pm"
     address = "Machine Learning Group, Humboldt-Universität zu Berlin, Unter den Linden 6, 10099 Berlin."
     phone = "+49 (0)30 2093 3167"
 
@@ -32,7 +33,7 @@ disqusShortname = "patrickjhnichen"
     custom_js  = []
 
     #set current term
-    current_term = "Winter 2016/2017"
+    current_term = "Summer 2017"
 
     [[params.education]]
         course = "PhD in NLP/ML"

@@ -115,7 +115,6 @@
         {{ $.Scratch.Add "prevCourses" 1 }}
     {{ end }}
 {{ end }}
-{{ if gt ($.Scratch.Get "currentCourses") 0 }}
 <section id="teaching" class="home-section">
     <div class="container">
         <div class="row">
@@ -128,34 +127,40 @@
             </div>
             <div class="col-xs-12 col-md-8">
                 <ul class="fa-ul">
-                {{ range where .Data.Pages "Type" "teaching" }}
-                    {{ if eq .Params.term .Site.Params.current_term }}
-                    <li>
-                        {{ if .Content }}
-                            <a href="{{ .Permalink }}">
-                        {{ else }}
-                            {{ with .Params.external_link }}
-                                <a href="{{ . }}">
+                {{ if gt ($.Scratch.Get "currentCourses") 0 }}
+                    {{ range where .Data.Pages "Type" "teaching" }}
+                        {{ if eq .Params.term .Site.Params.current_term }}
+                        <li>
+                            {{ if .Content }}
+                                <a href="{{ .Permalink }}">
+                            {{ else }}
+                                {{ with .Params.external_link }}
+                                    <a href="{{ . }}">
+                                {{ end }}
                             {{ end }}
-                        {{ end }}
-                        <i class="fa-li fa fa-graduation-cap" aria-hidden="true"></i>
-                        <span style="padding-right: 8px">{{ .Title }}</span>
-                        {{ if .Content }}
-                            </a >
-                        {{ else }}
-                            {{ with .Params.external_link }}
-                                </a>
+                            <i class="fa-li fa fa-graduation-cap" aria-hidden="true"></i>
+                            <span style="padding-right: 8px">{{ .Title }}</span>
+                            {{ if .Content }}
+                                </a >
+                            {{ else }}
+                                {{ with .Params.external_link }}
+                                    </a>
+                                {{ end }}
                             {{ end }}
+                        </li>
                         {{ end }}
-                    </li>
                     {{ end }}
+                {{ else}}
+                    <li>
+                        <i class="fa-li fa fa-ban" aria-hidden="true"></i>
+                        <span style="padding-right: 8px">I'm currently not teaching, look out for future lectures or seminars.</span>
+                    </li>
                 {{ end }}
                 </ul>
             </div>
         </div>
     </div>
 </section>
-{{ end }}
 
 <!-- Custom Sections -->
 {{ range $index, $page := where .Data.Pages "Type" "home" }}
