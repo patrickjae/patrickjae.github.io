@@ -50,6 +50,29 @@ disqusShortname = "patrickjhnichen"
         institution = "Stuttgart University of Cooperative Education (BA)"
         year = 2005
 
+    # Activities (PCs, reviewing, etc.)
+
+    [[params.activities]]
+        institution = "Advances in Approximate Bayesian Inference (Workshop at NIPS)"
+        year = "since 2015"
+        activity = "Reviewer, Member of Program Committee"
+    [[params.activities]]
+        institution = "NIPS conference"
+        year = "2016, 2017"
+        activity = "Reviewer, Member of Program Committee"
+    [[params.activities]]
+        institution = "Open Civil Engineering Journal"
+        year = "since 2016"
+        activity = "Reviewer"
+    [[params.activities]]
+        institution = "Genomics and Computational Biology"
+        year = "since 2016"
+        activity = "Reviewer"
+    [[params.activities]]
+        institution = "Digital Humanities Quarterly"
+        year = "since 2016"
+        activity = "Reviewer"
+
     # Social/Academic Networking
     #
     # Icon pack "fa" includes the following social network icons:

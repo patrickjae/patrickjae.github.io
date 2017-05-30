@@ -64,6 +64,24 @@
             {{ end }}
 
         </div>
+        <div class="row">
+            {{if isset .Site.Params "activities" }}
+           <div class="col-md-7">
+                <h3>Activities</h3>
+                <ul class="ul-edu fa-ul">
+                    {{ range .Site.Params.activities }}
+                    <li>
+                        <i class="fa-li fa fa-cogs"></i>
+                        <div class="description">
+                            <p class="course">{{ .institution }}, {{ .year }}</p>
+                            <p class="institution">{{ .activity }}</p>
+                        </div>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end}}
+        </div>
 
     </div>
 </div>
