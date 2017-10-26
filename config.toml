@@ -18,7 +18,7 @@ disqusShortname = "patrickjhnichen"
     interests = ["Topic modeling", "Dynamic Bayesian Models", "Gaussian processes", "Scalable Baysian Inference"]
     email = "patrick.jaehnichen@hu-berlin.de"
     office_hours = "Office hours: Thursdays, 1 pm - 3 pm"
-    address = "Knowledge Management in Bioinformatics, Humboldt-Universität zu Berlin (Visitors: Rudower Chaussee 25, Bldg. IV, Room 217 (second floor), 12489 Berlin; Postal: Unter den Linden 6, 10099 Berlin)"
+    address = "Knowledge Management in Bioinformatics, Humboldt-Universität zu Berlin (Visitors: Rudower Chaussee 25, Bldg. IV, Room 407 (fourth floor), 12489 Berlin; Postal: Unter den Linden 6, 10099 Berlin)"
     phone = "+49 (0)30 2093 3167"
 
     # Date format (refer to Go's formatting options)
