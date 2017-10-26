@@ -39,4 +39,4 @@ Exercises are Tuesdays, 3:15pm and Fridays, 9:15am (duration depends on the amou
 While I originally admitted 50 students to the exercises, I have over a 100 registrations. As I don't like kicking out students, I have decided to allow group work in the exercises _and_ not to correct the exercise sheets.
 A group should consist of two members, one of which will be able to attend the exercise (you decide how to handle this).
 
-I will publish a standard solution on the moodle page but still will require you to send in notebooks (I'll show you what that is in the lecture) on the practical parts of the exercises.
+I will publish a standard solution on the moodle page but still will require you to send in notebooks on the practical parts of the exercises.
