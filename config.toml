@@ -33,7 +33,7 @@ disqusShortname = "patrickjhnichen"
     custom_js  = []
 
     #set current term
-    current_term = "Winter 2017/2018"
+    current_term = "Summer 2018"
 
     [[params.education]]
         course = "PhD in NLP/ML"
