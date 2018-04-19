@@ -13,7 +13,7 @@ disqusShortname = "patrickjhnichen"
 
 [params]
     name = "Patrick Jähnichen"
-    role = "Postdoctoral Researcher in Machine Learning"
+    role = "Postdoctoral Researcher in Machine-Learning"
     organization = "Humboldt-Universität zu Berlin"
     interests = ["Topic modeling", "Dynamic Bayesian Models", "Gaussian processes", "Scalable Baysian Inference"]
     email = "patrick.jaehnichen@hu-berlin.de"
