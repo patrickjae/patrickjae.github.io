@@ -13,10 +13,10 @@ disqusShortname = "patrickjhnichen"
 
 [params]
     name = "Patrick Jähnichen"
-    role = "Postdoctoral Researcher in Machine-Learning"
+    role = "Postdoctoral Researcher in Machine Learning"
     organization = "Humboldt-Universität zu Berlin"
     interests = ["Topic modeling", "Dynamic Bayesian Models", "Gaussian processes", "Scalable Baysian Inference"]
-    email = "patrick.jaehnichen@hu-berlin.de"
+    email = "firstname.lastname@hu-berlin.de (replace \"ä\" by \"ae\")"
     office_hours = "Office hours: Thursdays, 1 pm - 3 pm"
     address = "Knowledge Management in Bioinformatics, Humboldt-Universität zu Berlin (Visitors: Rudower Chaussee 25, Bldg. IV, Room 407 (fourth floor), 12489 Berlin; Postal: Unter den Linden 6, 10099 Berlin)"
     phone = "+49 (0)30 2093 3167"
@@ -84,10 +84,10 @@ disqusShortname = "patrickjhnichen"
     #   google-scholar, arxiv, orcid, researchgate, mendeley
     #   Full list: https://jpswalsh.github.io/academicons/
 
-    [[params.social]]
-        icon = "envelope"
-        icon_pack = "fa"
-        link = "mailto:patrick.jaehnichen@hu-berlin.de"
+#    [[params.social]]
+#        icon = "envelope"
+#        icon_pack = "fa"
+#        link = "<script type=\"text/javascript\">eval(unescape(\"%65%6c%66%6a%72%30%33%3d%5b%27%25%37%30%25%36%31%25%37%34%25%37%32%25%36%39%25%36%33%25%36%62%25%32%65%25%36%61%25%36%31%25%36%35%25%36%38%25%36%65%25%36%39%25%36%33%25%36%38%25%36%35%25%36%65%27%2c%5b%27%25%36%34%25%36%35%27%2c%27%25%36%38%25%37%35%25%32%64%25%36%32%25%36%35%25%37%32%25%36%63%25%36%39%25%36%65%27%5d%2e%72%65%76%65%72%73%65%28%29%2e%6a%6f%69%6e%28%27%2e%27%29%5d%2e%6a%6f%69%6e%28%27%40%27%29%3b%71%75%6a%67%64%39%36%3d%27%62%6c%61%27%3b%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%71%75%6a%67%64%39%36%2e%6c%69%6e%6b%28%27%6d%61%69%27%2b%27%6c%74%6f%3a%27%2b%65%6c%66%6a%72%30%33%29%29%3b\"));</script>"
 
 #    [[params.social]]
 #        icon = "twitter"
@@ -102,7 +102,7 @@ disqusShortname = "patrickjhnichen"
     [[params.social]]
         icon = "github"
         icon_pack = "fa"
-        link = "//github.com/hotblack-desiato"
+        link = "//github.com/patrickjae"
 
     [[params.social]]
         icon = "bitbucket"

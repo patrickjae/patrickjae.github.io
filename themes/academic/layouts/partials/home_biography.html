@@ -13,7 +13,7 @@
             <ul class="list-inline social-icon">
                 {{ range .Site.Params.social }}
                 <li>
-                    <a href="{{ .link }}">
+                    <a href="{{ .link | safeHTML }}">
                     {{ if eq .icon_pack "ai" }}
                         <i class="ai ai-{{ .icon }} big-icon" aria-hidden="true"></i>
                     {{ else }}
