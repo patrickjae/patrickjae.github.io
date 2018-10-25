@@ -4,6 +4,7 @@ title = "Discriminative Hallucination for Multi-Modal Few-Shot Learning"
 authors = ["Frederik Pahde", "Moin Nabi", "Tassilo Klein", "Patrick Jähnichen"]
 publication = "2018 IEEE International Conference on Image Processing"
 url_pdf = "pdf/icip-discriminative-hallucination.pdf"
+date = "2018-10-10"
 url_image = ""
 url_code = ""
 url_dataset = ""
