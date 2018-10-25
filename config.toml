@@ -53,13 +53,25 @@ disqusShortname = "patrickjhnichen"
     # Activities (PCs, reviewing, etc.)
 
     [[params.activities]]
-        institution = "Advances in Approximate Bayesian Inference (Workshop at NIPS)"
-        year = "since 2015"
+        institution = "ICLR conference"
+        year = "2018"
+        activity = "Reviewer, Member of Program Committee"
+    [[params.activities]]
+        institution = "ICML conference"
+        year = "2018"
         activity = "Reviewer, Member of Program Committee"
     [[params.activities]]
         institution = "NIPS conference"
         year = "2016, 2017"
         activity = "Reviewer, Member of Program Committee"
+    [[params.activities]]
+        institution = "BMC Bioinformatics"
+        year = "since 2018"
+        activity = "Reviewer"
+    [[params.activities]]
+        institution = "Journal of Machine Learning Research (JMLR)"
+        year = "since 2017"
+        activity = "Reviewer"
     [[params.activities]]
         institution = "Open Civil Engineering Journal"
         year = "since 2016"
@@ -72,6 +84,10 @@ disqusShortname = "patrickjhnichen"
         institution = "Digital Humanities Quarterly"
         year = "since 2016"
         activity = "Reviewer"
+    [[params.activities]]
+        institution = "Advances in Approximate Bayesian Inference (Workshop at NIPS)"
+        year = "since 2015"
+        activity = "Reviewer, Member of Program Committee"
 
     # Social/Academic Networking
     #
@@ -89,10 +105,10 @@ disqusShortname = "patrickjhnichen"
 #        icon_pack = "fa"
 #        link = "<script type=\"text/javascript\">eval(unescape(\"%65%6c%66%6a%72%30%33%3d%5b%27%25%37%30%25%36%31%25%37%34%25%37%32%25%36%39%25%36%33%25%36%62%25%32%65%25%36%61%25%36%31%25%36%35%25%36%38%25%36%65%25%36%39%25%36%33%25%36%38%25%36%35%25%36%65%27%2c%5b%27%25%36%34%25%36%35%27%2c%27%25%36%38%25%37%35%25%32%64%25%36%32%25%36%35%25%37%32%25%36%63%25%36%39%25%36%65%27%5d%2e%72%65%76%65%72%73%65%28%29%2e%6a%6f%69%6e%28%27%2e%27%29%5d%2e%6a%6f%69%6e%28%27%40%27%29%3b%71%75%6a%67%64%39%36%3d%27%62%6c%61%27%3b%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%71%75%6a%67%64%39%36%2e%6c%69%6e%6b%28%27%6d%61%69%27%2b%27%6c%74%6f%3a%27%2b%65%6c%66%6a%72%30%33%29%29%3b\"));</script>"
 
-#    [[params.social]]
-#        icon = "twitter"
-#        icon_pack = "fa"
-#        link = "//twitter.com/GeorgeCushen"
+   [[params.social]]
+       icon = "google-scholar"
+       icon_pack = "ai"
+       link = "https://scholar.google.de/citations?user=p4f9rBIAAAAJ"
 
     [[params.social]]
         icon = "researchgate"
