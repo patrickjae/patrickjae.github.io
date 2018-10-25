@@ -53,19 +53,19 @@ disqusShortname = "patrickjhnichen"
     # Activities (PCs, reviewing, etc.)
 
     [[params.activities]]
-        institution = "ICLR conference"
+        institution = "International Conferene on Learning Representations (ICLR)"
         year = "2018"
         activity = "Reviewer, Member of Program Committee"
     [[params.activities]]
-        institution = "ICML conference"
+        institution = "International Conference on Machine Learning (ICML)"
         year = "2018"
         activity = "Reviewer, Member of Program Committee"
     [[params.activities]]
-        institution = "NIPS conference"
+        institution = "Neural Information Processing Systems (NIPS) conference"
         year = "2016, 2017"
         activity = "Reviewer, Member of Program Committee"
     [[params.activities]]
-        institution = "BMC Bioinformatics"
+        institution = "BioMedCentral (BMC) Bioinformatics"
         year = "since 2018"
         activity = "Reviewer"
     [[params.activities]]
@@ -85,8 +85,8 @@ disqusShortname = "patrickjhnichen"
         year = "since 2016"
         activity = "Reviewer"
     [[params.activities]]
-        institution = "Advances in Approximate Bayesian Inference (Workshop at NIPS)"
-        year = "since 2015"
+        institution = "Advances in Approximate Bayesian Inference (AABI Workshop at NIPS)"
+        year = "2015, 2016, 2017"
         activity = "Reviewer, Member of Program Committee"
 
     # Social/Academic Networking
